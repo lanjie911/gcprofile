@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="gcprofile:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/gcprofile_jar</output-path>
+    <root id="archive" name="gcprofile.jar">
+      <element id="module-output" name="gcprofile" />
+    </root>
+  </artifact>
+</component>
