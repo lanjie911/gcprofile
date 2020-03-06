@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="680b4fe9-29f5-4871-af39-f2636b9c6688" name="Default Changelist" comment="" />
+    <list default="true" id="680b4fe9-29f5-4871-af39-f2636b9c6688" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/bj/brook/algorithm/PrintSequentialArraySumEqualTarget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cn/bj/brook/algorithm/TestPrintSequentialArraySumEqualTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/bj/brook/basegramma/DemoVolatile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/bj/brook/basegramma/DemoVolatile.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +31,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -69,8 +77,8 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestAssignCandies">
-    <configuration name="TestAssignCandies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestPrintSequentialArraySumEqualTarget.test6">
+    <configuration name="TestPrintSequentialArraySumEqualTarget" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gcprofile" />
       <extension name="coverage">
         <pattern>
@@ -79,13 +87,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.bj.brook.algorithm" />
-      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestAssignCandies" />
+      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestPrintSequentialArraySumEqualTarget" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAssignCandies.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPrintSequentialArraySumEqualTarget.test5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gcprofile" />
       <extension name="coverage">
         <pattern>
@@ -94,14 +102,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.bj.brook.algorithm" />
-      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestAssignCandies" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestPrintSequentialArraySumEqualTarget" />
+      <option name="METHOD_NAME" value="test5" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAssignCandies.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPrintSequentialArraySumEqualTarget.test6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gcprofile" />
       <extension name="coverage">
         <pattern>
@@ -110,14 +118,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.bj.brook.algorithm" />
-      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestAssignCandies" />
-      <option name="METHOD_NAME" value="test2" />
+      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestPrintSequentialArraySumEqualTarget" />
+      <option name="METHOD_NAME" value="test6" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAssignCandies.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPrintSequentialArraySumEqualTarget.test7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gcprofile" />
       <extension name="coverage">
         <pattern>
@@ -126,14 +134,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.bj.brook.algorithm" />
-      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestAssignCandies" />
-      <option name="METHOD_NAME" value="test3" />
+      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestPrintSequentialArraySumEqualTarget" />
+      <option name="METHOD_NAME" value="test7" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAssignCandies.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPrintSequentialArraySumEqualTarget.test8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gcprofile" />
       <extension name="coverage">
         <pattern>
@@ -142,27 +150,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cn.bj.brook.algorithm" />
-      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestAssignCandies" />
-      <option name="METHOD_NAME" value="test4" />
+      <option name="MAIN_CLASS_NAME" value="cn.bj.brook.algorithm.TestPrintSequentialArraySumEqualTarget" />
+      <option name="METHOD_NAME" value="test8" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.TestAssignCandies" />
-      <item itemvalue="JUnit.TestAssignCandies.test3" />
-      <item itemvalue="JUnit.TestAssignCandies.test4" />
-      <item itemvalue="JUnit.TestAssignCandies.test2" />
-      <item itemvalue="JUnit.TestAssignCandies.test1" />
+      <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget.test5" />
+      <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget.test6" />
+      <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget.test7" />
+      <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget" />
+      <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget.test8" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestAssignCandies" />
-        <item itemvalue="JUnit.TestAssignCandies.test4" />
-        <item itemvalue="JUnit.TestAssignCandies.test1" />
-        <item itemvalue="JUnit.TestAssignCandies.test2" />
-        <item itemvalue="JUnit.TestAssignCandies.test3" />
+        <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget.test6" />
+        <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget.test8" />
+        <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget" />
+        <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget.test5" />
+        <item itemvalue="JUnit.TestPrintSequentialArraySumEqualTarget.test7" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +240,11 @@
       <screen x="69" y="23" width="1467" height="937" />
     </state>
     <state x="541" y="345" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/69.23.1467.937@69.23.1467.937" timestamp="1580814293536" />
-    <state width="1358" height="291" key="GridCell.Tab.0.bottom" timestamp="1583397846404">
+    <state x="411" y="77" key="CommitChangelistDialog2" timestamp="1583506606975">
+      <screen x="78" y="23" width="1458" height="937" />
+    </state>
+    <state x="411" y="77" key="CommitChangelistDialog2/78.23.1458.937@78.23.1458.937" timestamp="1583506606975" />
+    <state width="1358" height="291" key="GridCell.Tab.0.bottom" timestamp="1583506368891">
       <screen x="78" y="23" width="1458" height="937" />
     </state>
     <state width="1358" height="237" key="GridCell.Tab.0.bottom/49.23.1487.937@49.23.1487.937" timestamp="1575724630246" />
@@ -249,8 +261,8 @@
     <state width="1358" height="237" key="GridCell.Tab.0.bottom/72.23.1464.937@72.23.1464.937" timestamp="1579959765592" />
     <state width="1358" height="220" key="GridCell.Tab.0.bottom/74.23.1462.937@74.23.1462.937" timestamp="1583329615653" />
     <state width="1358" height="293" key="GridCell.Tab.0.bottom/76.23.1460.937@76.23.1460.937" timestamp="1575157966875" />
-    <state width="1358" height="291" key="GridCell.Tab.0.bottom/78.23.1458.937@78.23.1458.937" timestamp="1583397846404" />
-    <state width="1358" height="291" key="GridCell.Tab.0.center" timestamp="1583397846404">
+    <state width="1358" height="291" key="GridCell.Tab.0.bottom/78.23.1458.937@78.23.1458.937" timestamp="1583506368891" />
+    <state width="1358" height="291" key="GridCell.Tab.0.center" timestamp="1583506368891">
       <screen x="78" y="23" width="1458" height="937" />
     </state>
     <state width="1358" height="237" key="GridCell.Tab.0.center/49.23.1487.937@49.23.1487.937" timestamp="1575724630245" />
@@ -267,8 +279,8 @@
     <state width="1358" height="237" key="GridCell.Tab.0.center/72.23.1464.937@72.23.1464.937" timestamp="1579959765592" />
     <state width="1358" height="220" key="GridCell.Tab.0.center/74.23.1462.937@74.23.1462.937" timestamp="1583329615652" />
     <state width="1358" height="293" key="GridCell.Tab.0.center/76.23.1460.937@76.23.1460.937" timestamp="1575157966875" />
-    <state width="1358" height="291" key="GridCell.Tab.0.center/78.23.1458.937@78.23.1458.937" timestamp="1583397846404" />
-    <state width="1358" height="291" key="GridCell.Tab.0.left" timestamp="1583397846403">
+    <state width="1358" height="291" key="GridCell.Tab.0.center/78.23.1458.937@78.23.1458.937" timestamp="1583506368891" />
+    <state width="1358" height="291" key="GridCell.Tab.0.left" timestamp="1583506368890">
       <screen x="78" y="23" width="1458" height="937" />
     </state>
     <state width="1358" height="237" key="GridCell.Tab.0.left/49.23.1487.937@49.23.1487.937" timestamp="1575724630245" />
@@ -285,8 +297,8 @@
     <state width="1358" height="237" key="GridCell.Tab.0.left/72.23.1464.937@72.23.1464.937" timestamp="1579959765591" />
     <state width="1358" height="220" key="GridCell.Tab.0.left/74.23.1462.937@74.23.1462.937" timestamp="1583329615652" />
     <state width="1358" height="293" key="GridCell.Tab.0.left/76.23.1460.937@76.23.1460.937" timestamp="1575157966874" />
-    <state width="1358" height="291" key="GridCell.Tab.0.left/78.23.1458.937@78.23.1458.937" timestamp="1583397846403" />
-    <state width="1358" height="291" key="GridCell.Tab.0.right" timestamp="1583397846404">
+    <state width="1358" height="291" key="GridCell.Tab.0.left/78.23.1458.937@78.23.1458.937" timestamp="1583506368890" />
+    <state width="1358" height="291" key="GridCell.Tab.0.right" timestamp="1583506368891">
       <screen x="78" y="23" width="1458" height="937" />
     </state>
     <state width="1358" height="237" key="GridCell.Tab.0.right/49.23.1487.937@49.23.1487.937" timestamp="1575724630246" />
@@ -303,8 +315,8 @@
     <state width="1358" height="237" key="GridCell.Tab.0.right/72.23.1464.937@72.23.1464.937" timestamp="1579959765592" />
     <state width="1358" height="220" key="GridCell.Tab.0.right/74.23.1462.937@74.23.1462.937" timestamp="1583329615653" />
     <state width="1358" height="293" key="GridCell.Tab.0.right/76.23.1460.937@76.23.1460.937" timestamp="1575157966875" />
-    <state width="1358" height="291" key="GridCell.Tab.0.right/78.23.1458.937@78.23.1458.937" timestamp="1583397846404" />
-    <state width="1358" height="291" key="GridCell.Tab.1.bottom" timestamp="1583397846405">
+    <state width="1358" height="291" key="GridCell.Tab.0.right/78.23.1458.937@78.23.1458.937" timestamp="1583506368891" />
+    <state width="1358" height="291" key="GridCell.Tab.1.bottom" timestamp="1583506369256">
       <screen x="78" y="23" width="1458" height="937" />
     </state>
     <state width="1358" height="336" key="GridCell.Tab.1.bottom/60.23.1476.937@60.23.1476.937" timestamp="1581427727482" />
@@ -318,8 +330,8 @@
     <state width="1358" height="293" key="GridCell.Tab.1.bottom/72.23.1464.937@72.23.1464.937" timestamp="1578122874069" />
     <state width="1358" height="291" key="GridCell.Tab.1.bottom/74.23.1462.937@74.23.1462.937" timestamp="1583322548579" />
     <state width="1358" height="293" key="GridCell.Tab.1.bottom/76.23.1460.937@76.23.1460.937" timestamp="1575157967057" />
-    <state width="1358" height="291" key="GridCell.Tab.1.bottom/78.23.1458.937@78.23.1458.937" timestamp="1583397846405" />
-    <state width="1358" height="291" key="GridCell.Tab.1.center" timestamp="1583397846404">
+    <state width="1358" height="291" key="GridCell.Tab.1.bottom/78.23.1458.937@78.23.1458.937" timestamp="1583506369256" />
+    <state width="1358" height="291" key="GridCell.Tab.1.center" timestamp="1583506369255">
       <screen x="78" y="23" width="1458" height="937" />
     </state>
     <state width="1358" height="336" key="GridCell.Tab.1.center/60.23.1476.937@60.23.1476.937" timestamp="1581427727481" />
@@ -333,8 +345,8 @@
     <state width="1358" height="293" key="GridCell.Tab.1.center/72.23.1464.937@72.23.1464.937" timestamp="1578122874069" />
     <state width="1358" height="291" key="GridCell.Tab.1.center/74.23.1462.937@74.23.1462.937" timestamp="1583322548579" />
     <state width="1358" height="293" key="GridCell.Tab.1.center/76.23.1460.937@76.23.1460.937" timestamp="1575157967056" />
-    <state width="1358" height="291" key="GridCell.Tab.1.center/78.23.1458.937@78.23.1458.937" timestamp="1583397846404" />
-    <state width="1358" height="291" key="GridCell.Tab.1.left" timestamp="1583397846404">
+    <state width="1358" height="291" key="GridCell.Tab.1.center/78.23.1458.937@78.23.1458.937" timestamp="1583506369255" />
+    <state width="1358" height="291" key="GridCell.Tab.1.left" timestamp="1583506369254">
       <screen x="78" y="23" width="1458" height="937" />
     </state>
     <state width="1358" height="336" key="GridCell.Tab.1.left/60.23.1476.937@60.23.1476.937" timestamp="1581427727481" />
@@ -348,8 +360,8 @@
     <state width="1358" height="293" key="GridCell.Tab.1.left/72.23.1464.937@72.23.1464.937" timestamp="1578122874069" />
     <state width="1358" height="291" key="GridCell.Tab.1.left/74.23.1462.937@74.23.1462.937" timestamp="1583322548578" />
     <state width="1358" height="293" key="GridCell.Tab.1.left/76.23.1460.937@76.23.1460.937" timestamp="1575157967056" />
-    <state width="1358" height="291" key="GridCell.Tab.1.left/78.23.1458.937@78.23.1458.937" timestamp="1583397846404" />
-    <state width="1358" height="291" key="GridCell.Tab.1.right" timestamp="1583397846405">
+    <state width="1358" height="291" key="GridCell.Tab.1.left/78.23.1458.937@78.23.1458.937" timestamp="1583506369254" />
+    <state width="1358" height="291" key="GridCell.Tab.1.right" timestamp="1583506369256">
       <screen x="78" y="23" width="1458" height="937" />
     </state>
     <state width="1358" height="336" key="GridCell.Tab.1.right/60.23.1476.937@60.23.1476.937" timestamp="1581427727481" />
@@ -363,7 +375,7 @@
     <state width="1358" height="293" key="GridCell.Tab.1.right/72.23.1464.937@72.23.1464.937" timestamp="1578122874069" />
     <state width="1358" height="291" key="GridCell.Tab.1.right/74.23.1462.937@74.23.1462.937" timestamp="1583322548579" />
     <state width="1358" height="293" key="GridCell.Tab.1.right/76.23.1460.937@76.23.1460.937" timestamp="1575157967057" />
-    <state width="1358" height="291" key="GridCell.Tab.1.right/78.23.1458.937@78.23.1458.937" timestamp="1583397846405" />
+    <state width="1358" height="291" key="GridCell.Tab.1.right/78.23.1458.937@78.23.1458.937" timestamp="1583506369256" />
     <state x="201" y="123" key="SettingsEditor" timestamp="1580562882790">
       <screen x="69" y="23" width="1467" height="937" />
     </state>
