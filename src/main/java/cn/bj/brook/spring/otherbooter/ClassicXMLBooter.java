@@ -12,7 +12,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class ClassicXMLBooter {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:classic-spring.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext(
+                "classpath:classic-spring.xml");
         Human human = context.getBean("humanInstance", Human.class);
         human.sayHi();
     }
