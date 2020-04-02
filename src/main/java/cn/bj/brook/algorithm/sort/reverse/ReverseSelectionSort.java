@@ -23,7 +23,7 @@ public class ReverseSelectionSort implements SortFunction {
         // 游标没有达到数组的末尾
         while(cursor < arr.length){
             // 记录一个最大值
-            int max = Integer.MIN_VALUE;
+            int max = arr[cursor];
             // 记录当前最大值的脚标
             int j = cursor;
             // 从游标的右侧(剩余的池子)
@@ -39,9 +39,11 @@ public class ReverseSelectionSort implements SortFunction {
             // 如果cursor的值和j的值相等
             // 就可以避免一次交换
             // 即cursor == j 就不交换
-            int temp = arr[cursor];
-            arr[cursor] = max;
-            arr[j] = temp;
+            if(cursor != j) {
+                int temp = arr[cursor];
+                arr[cursor] = max;
+                arr[j] = temp;
+            }
             // 游标向右拨动一格，游标左侧就是排好序的
             cursor++;
         }
