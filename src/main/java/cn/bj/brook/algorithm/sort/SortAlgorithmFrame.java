@@ -10,7 +10,7 @@ public class SortAlgorithmFrame {
         this.size = size;
     }
 
-    static SortAlgorithmFrame build(int bound, int size){
+    public static SortAlgorithmFrame build(int bound, int size){
         return new SortAlgorithmFrame(bound, size);
     }
 
