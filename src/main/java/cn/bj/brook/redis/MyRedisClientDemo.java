@@ -1,11 +1,10 @@
 package cn.bj.brook.redis;
 
-import redis.clients.jedis.HostAndPort;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisCluster;
-import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.*;
 
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class MyRedisClientDemo {
@@ -32,6 +31,28 @@ public class MyRedisClientDemo {
         client.close();
     }
 
+    public void testSentinel(){
+        Jedis client = new Jedis("172.16.105.141", 26379);
+        List<Map<String,String>> ls = client.sentinelSlaves("mymaster");
+
+        /*for(Map<String,String> map: ls){
+            Set<String> keys = map.keySet();
+            for(String key: keys){
+                System.out.println("key="+key+",value="+map.get(key));
+            }
+        }*/
+
+        Map<String,String> slaveMap0 = ls.get(0);
+        String ipAddress = slaveMap0.get("ip");
+        Integer port = Integer.parseInt(slaveMap0.get("port"));
+        client.close();
+        Jedis slave = new Jedis(ipAddress,port);
+        slave.auth("juanxian");
+        String v = slave.get("myname");
+        System.out.println(v);
+        slave.close();
+    }
+
     public void testCluster(){
         HostAndPort a = new HostAndPort("172.16.105.141",6379);
         HostAndPort b = new HostAndPort("172.16.105.142",6379);
@@ -54,6 +75,6 @@ public class MyRedisClientDemo {
 
     public static void main(String[] args) {
         MyRedisClientDemo demo = new MyRedisClientDemo();
-        demo.testCluster();
+        demo.testSentinel();
     }
 }

@@ -92,5 +92,21 @@ public class CompareThem {
         Arrays.sort(copy);
         end = System.currentTimeMillis();
         System.out.println("JDK双枢轴量快速排序:" + (end - begin) + "毫秒");
+
+        // 桶排序
+        SortFunction bucket = new ReverseBucketSort().setBucketNumber(100);
+        System.arraycopy(arr, 0, copy, 0, arr.length);
+        begin = System.currentTimeMillis();
+        bucket.sort(copy);
+        end = System.currentTimeMillis();
+        System.out.println("桶排序:" + (end - begin) + "毫秒");
+
+        // 修订后的快排
+        SortFunction quickSortRemedy = new ReverseQuickSortRemedy();
+        System.arraycopy(arr, 0, copy, 0, arr.length);
+        begin = System.currentTimeMillis();
+        quickSortRemedy.sort(copy);
+        end = System.currentTimeMillis();
+        System.out.println("修订快速排序:" + (end - begin) + "毫秒");
     }
 }
