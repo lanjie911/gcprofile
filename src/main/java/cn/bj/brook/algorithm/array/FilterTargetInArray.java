@@ -1,5 +1,7 @@
 package cn.bj.brook.algorithm.array;
 
+import cn.bj.brook.algorithm.sort.SortUtil;
+
 /**
  * 给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。
  * <p>
@@ -27,29 +29,29 @@ package cn.bj.brook.algorithm.array;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/remove-element
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- *
  */
 public class FilterTargetInArray {
-    public int removeTargetElementInNewArray(int[] nums, int target) {
-        int[] newArray = new int[nums.length];
-        int curr = 0;
-        int j = 0;
-        for (int i = 0; i < nums.length; ) {
-            curr = nums[i];
-            if (j == 0 && curr != target) {
-                newArray[j] = curr;
-                j++;
-            } else {
-                if (nums[i] != target) {
-                    newArray[j] = curr;
-                    j++;
-                }
+    public int removeTargetElementInArray(int[] nums, int target) {
+        int cursor = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != target) {
+                nums[cursor] = nums[i];
+                cursor++;
+                continue;
             }
-            i++;
         }
-        for (int i = 0; i < newArray.length; i++) {
-            nums[i] = newArray[i];
-        }
-        return j;
+        return cursor++;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{3, 2, 2, 3};
+        FilterTargetInArray ftia = new FilterTargetInArray();
+        int t = ftia.removeTargetElementInArray(arr, 3);
+        SortUtil.print(arr);
+        System.out.println("t=" + t);
+        arr = new int[]{0, 1, 2, 2, 3, 0, 4, 2};
+        t = ftia.removeTargetElementInArray(arr, 2);
+        SortUtil.print(arr);
+        System.out.println("t=" + t);
     }
 }

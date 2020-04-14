@@ -32,6 +32,7 @@ public class FirstMissedPositiveZ {
 
     /**
      * 使用treemap内部排序法
+     *
      * @param nums
      * @return
      */
@@ -39,18 +40,18 @@ public class FirstMissedPositiveZ {
 
         TreeMap<Integer, Integer> map = new TreeMap<>();
         for (int e : nums) {
-            if(e <= 0){
+            if (e <= 0) {
                 continue;
             }
             map.put(e, e);
         }
         Set<Integer> keys = map.keySet();
         int bid = 1;
-        for(Integer i:keys){
-            if(bid < i){
+        for (Integer i : keys) {
+            if (bid < i) {
                 return bid;
             }
-            bid = i+1;
+            bid = i + 1;
         }
         return bid;
     }
@@ -61,33 +62,33 @@ public class FirstMissedPositiveZ {
      * 第一个循环，把数组的元素的值作为key放到哈希表中
      * 放入的条件必须是>0的数
      * 同时在放入数组元素的时候，记录一个最大值
-     *
+     * <p>
      * 第二个循环，以最大值为届，从1开始，循环+1比较
      * 如果遇到一个数，这个数从map里取不到值，那就是缺失的值
-     *
+     * <p>
      * 此种方法算是o(n)，但是利用了哈希表，所以……囧不知道算不算
      *
      * @param nums
      * @return
      */
     public int firstMissingPositive2(int[] nums) {
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         // 定义一个最大正数值
         int max = 0;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i] <= 0){
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] <= 0) {
                 continue;
             }
-            map.put(nums[i],i);
-            if(nums[i] > max){
+            map.put(nums[i], i);
+            if (nums[i] > max) {
                 // 最大值发生变化
                 max = nums[i];
             }
         }
         // 从1开始找
-        int j=1;
-        for(;j<=max;j++){
-            if(map.get(j) == null){
+        int j = 1;
+        for (; j <= max; j++) {
+            if (map.get(j) == null) {
                 return j;
             }
         }
@@ -96,10 +97,10 @@ public class FirstMissedPositiveZ {
 
     public static void main(String[] args) {
         FirstMissedPositiveZ z = new FirstMissedPositiveZ();
-        int k = z.firstMissingPositive(new int[]{7,5,1,3,2});
+        int k = z.firstMissingPositive(new int[]{7, 5, 1, 3, 2});
         System.out.println(k);
 
-        k = z.firstMissingPositive2(new int[]{7,5,1,3,2});
+        k = z.firstMissingPositive2(new int[]{7, 5, 1, 3, 2});
         System.out.println(k);
     }
 }

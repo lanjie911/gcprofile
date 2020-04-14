@@ -35,108 +35,86 @@ public class SearchRotateAscArray {
      * @return
      */
     public int search(int[] nums, int target) {
-        int left_pointer = 0;
-        int right_pointer = nums.length-1;
-
-        if(target == nums[left_pointer]){
-            return left_pointer;
+        int head = 0;
+        int tail = nums.length - 1;
+        if (target == nums[head]) {
+            return head;
         }
-
-        if(target == nums[right_pointer]){
-            return right_pointer;
+        if (target == nums[tail]) {
+            return tail;
         }
-
-        // 小于右侧（较小的部分）
-        if(target < nums[right_pointer]){
-            // 把左指针，向右移动到不能移动的部分
-            left_pointer = moveLeftPointerToRight(left_pointer,right_pointer,target,nums);
-            // 再双指针
-            return left_pointer;
+        // 小于尾部
+        if (target < nums[tail]) {
+            // 把左指针，向右移动到不能移动的部分，在较小的那部分区域搜索
+            head = searchInRightArea(head, tail, target, nums);
+            return head;
         }
-
-        if(target > nums[left_pointer]){
-            // 把右指针，向左移动到不能移动的部分
-            right_pointer = moveRightPointerToLeft(left_pointer,right_pointer,target,nums);
-            // 再双指针
-            return right_pointer;
+        // 大于头部
+        if (target > nums[head]) {
+            // 把右指针，向左移动到不能移动的部分，在较大的那部分区域搜索
+            tail = searchInLeftArea(head, tail, target, nums);
+            return tail;
         }
-
         return -1;
     }
 
-    private int moveLeftPointerToRight(int left_pointer, int right_pointer, int target, int[] nums) {
+    private int searchInRightArea(int left_pointer, int right_pointer, int target, int[] nums) {
         int start = left_pointer;
-        int end = right_pointer;
-        while(left_pointer < right_pointer){
-            // 处理相邻两个元素无限循环
-            if(left_pointer+1 == right_pointer){
-                if(nums[left_pointer] == target){
-                    return left_pointer;
-                }
-                if(nums[right_pointer] == target){
-                    return right_pointer;
-                }
-                return -1;
-            }
-
-            if(nums[left_pointer] > nums[right_pointer]){
-                // 还在左半部分大数区域，不够，继续移动
-                left_pointer = (left_pointer+right_pointer) / 2;
+        while (left_pointer + 1 < right_pointer) {
+            if (nums[left_pointer] > nums[right_pointer]) {
+                // 指针还在左半部分的大数区域，继续跳跃移动左指针向右半部分小数区域靠近
+                left_pointer = (left_pointer + right_pointer) / 2;
                 continue;
             }
             // 判断target在什么区间
-            if(target > nums[left_pointer]){
-                // O了，已经落在一个小数 和 大数区间了，可以用二分法了
-                return binarySearch(left_pointer,right_pointer,target,nums);
+            if (target > nums[left_pointer]) {
+                // 目标已经落在一个小数区间了，使用二分法在小数区间进行搜索
+                return binarySearch(left_pointer, right_pointer, target, nums);
             }
-            if(target < nums[left_pointer]){
-                // 比这个数还小
+            if (target < nums[left_pointer]) {
+                // target比当前左指针数小，意味着左指针向右跳跃的太狠了，那么需要把左指针作为新的右指针，把最早传入的左指针作为开始
                 right_pointer = left_pointer;
-                // 左指针继续向左移动，试图把区间变的更小
                 left_pointer = (start + left_pointer) / 2;
                 continue;
             }
-            if(target == nums[left_pointer]){
+            if (target == nums[left_pointer]) {
                 return left_pointer;
             }
+        }
+        // 处理相邻两个元素
+        if (nums[left_pointer] == target) {
+            return left_pointer;
+        }
+        if (nums[right_pointer] == target) {
+            return right_pointer;
         }
         return -1;
     }
 
-    private int moveRightPointerToLeft(int left_pointer, int right_pointer, int target, int[] nums) {
-        int start = left_pointer;
+    private int searchInLeftArea(int left_pointer, int right_pointer, int target, int[] nums) {
         int end = right_pointer;
-        while(left_pointer < right_pointer){
-            // 处理相邻两个元素无限循环
-            if(left_pointer+1 == right_pointer){
-                if(nums[left_pointer] == target){
-                    return left_pointer;
-                }
-                if(nums[right_pointer] == target){
-                    return right_pointer;
-                }
-                return -1;
-            }
-            if(nums[right_pointer] < nums[left_pointer]){
-                // 还在右半部分小数区域，不够，继续移动
-                right_pointer = (left_pointer+right_pointer) / 2;
+        while (left_pointer + 1 < right_pointer) {
+            if (nums[right_pointer] < nums[left_pointer]) {
+                right_pointer = (left_pointer + right_pointer) / 2;
                 continue;
             }
-            // 判断target在什么区间
-            if(target < nums[right_pointer]){
-                // O了，已经落在一个小数 和 大数区间了，可以用二分法了
-                return binarySearch(left_pointer,right_pointer,target,nums);
+            if (target < nums[right_pointer]) {
+                return binarySearch(left_pointer, right_pointer, target, nums);
             }
-            if(target > nums[right_pointer]){
-                // 比这个数还大
+            if (target > nums[right_pointer]) {
                 left_pointer = right_pointer;
-                // 右指针继续向右移动，试图把区间变的更大
                 right_pointer = (right_pointer + end) / 2;
                 continue;
             }
-            if(target == nums[right_pointer]){
+            if (target == nums[right_pointer]) {
                 return right_pointer;
             }
+        }
+        if (nums[left_pointer] == target) {
+            return left_pointer;
+        }
+        if (nums[right_pointer] == target) {
+            return right_pointer;
         }
         return -1;
     }
@@ -145,27 +123,27 @@ public class SearchRotateAscArray {
 
         int middle = -1;
 
-        while(left_pointer < right_pointer){
+        while (left_pointer < right_pointer) {
 
             // 处理相邻两个元素无限循环
-            if(left_pointer+1 == right_pointer){
-                if(nums[left_pointer] == target){
+            if (left_pointer + 1 == right_pointer) {
+                if (nums[left_pointer] == target) {
                     return left_pointer;
                 }
-                if(nums[right_pointer] == target){
+                if (nums[right_pointer] == target) {
                     return right_pointer;
                 }
                 return -1;
             }
 
-            middle = (left_pointer+right_pointer) / 2;
+            middle = (left_pointer + right_pointer) / 2;
             int middle_value = nums[middle];
             // 目标值比中间值还大
-            if(target > middle_value){
+            if (target > middle_value) {
                 left_pointer = middle;
                 continue;
             }
-            if(target < middle_value){
+            if (target < middle_value) {
                 right_pointer = middle;
                 continue;
             }
