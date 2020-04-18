@@ -21,7 +21,7 @@ public class ReverseSelectionSort implements SortFunction {
         int cursor = 0;
 
         // 游标没有达到数组的末尾
-        while(cursor < arr.length){
+        while(cursor < arr.length-1){
             // 记录一个最大值
             int max = arr[cursor];
             // 记录当前最大值的脚标

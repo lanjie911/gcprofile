@@ -51,7 +51,7 @@ public class NextDictSortSequence {
         // 找到i后面刚好大于位置i的元素
         if (i >= 0) {
             int j = nums.length - 1;
-            while (j >= 0 && nums[j] <= nums[i]) {
+            while (j > i && nums[j] <= nums[i]) {
                 j--;
             }
             // 交换位置i和位置j的元素

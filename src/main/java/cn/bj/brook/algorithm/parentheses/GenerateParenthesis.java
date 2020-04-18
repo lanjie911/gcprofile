@@ -56,9 +56,10 @@ public class GenerateParenthesis {
 
     public static void main(String[] args) {
         GenerateParenthesis gp = new GenerateParenthesis();
-        List<String> ls = gp.generate(3);
+        List<String> ls = gp.generate(4);
         for(String ele:ls){
             System.out.println(ele);
         }
+        System.out.println(ls.size());
     }
 }
