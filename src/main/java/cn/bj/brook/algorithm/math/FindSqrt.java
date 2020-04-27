@@ -76,5 +76,6 @@ public class FindSqrt {
         FindSqrt f = new FindSqrt();
         int k = f.mySqrt(2147483647);
         System.out.println("k=" + k);
+        Math.sqrt(100);
     }
 }

@@ -41,7 +41,6 @@ public class SymmetricTree {
         }
         // 如果左子树和右子树相等，那就是对称的
         return gpNode(root.left,root.right);
-
     }
 
     private boolean gpNode(TreeNode node1, TreeNode node2){

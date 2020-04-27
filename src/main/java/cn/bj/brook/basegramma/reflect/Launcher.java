@@ -2,6 +2,9 @@ package cn.bj.brook.basegramma.reflect;
 
 import java.lang.reflect.*;
 
+/**
+ * 测试反射机制
+ */
 public class Launcher {
     public static void main(String[] args) {
 

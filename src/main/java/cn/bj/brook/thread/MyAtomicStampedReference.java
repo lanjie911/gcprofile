@@ -9,7 +9,7 @@ public class MyAtomicStampedReference {
     private Thread th2;
 
     public MyAtomicStampedReference(){
-        asr = new AtomicStampedReference(i, 1);
+        asr = new AtomicStampedReference<>(i, 1);
         th1 = new Thread(()->{
             boolean b1 = asr.compareAndSet(i,2,1,5);
             System.out.println("b1, before="+b1);

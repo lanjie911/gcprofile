@@ -50,7 +50,7 @@ public class CombinationSumI {
             return;
         }
         for (int start = i; start < candidates.length; start++) {
-            if (target < 0) {
+            if (target -candidates[start] < 0) {
                 break;
             }
             // 加入元素
@@ -60,6 +60,24 @@ public class CombinationSumI {
             // 回溯去掉最后一个元素
             // 回归上一个
             tmp_list.remove(tmp_list.size() - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        CombinationSumI c1 = new CombinationSumI();
+        List<List<Integer>> ls = c1.combinationSum(new int[]{2,3,5},8);
+        for(List<Integer> is: ls){
+            for(Integer i: is){
+                System.out.printf("%d,",i);
+            }
+            System.out.println();
+        }
+        ls = c1.combinationSum(new int[]{2,3,6,7},7);
+        for(List<Integer> is: ls){
+            for(Integer i: is){
+                System.out.printf("%d,",i);
+            }
+            System.out.println();
         }
     }
 }

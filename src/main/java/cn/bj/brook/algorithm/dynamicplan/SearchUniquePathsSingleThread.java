@@ -3,6 +3,7 @@ package cn.bj.brook.algorithm.dynamicplan;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -30,7 +31,8 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class SearchUniquePathsSingleThread {
     static int counter = 0;
-    static Queue<SearchMachine> queue = new LinkedBlockingQueue<>();
+    // static Queue<SearchMachine> queue = new LinkedBlockingQueue<>();
+    static Stack<SearchMachine> stacks = new Stack<>();
 
     // 自走型寻路机器人
     // 内部保存一个完整的路径链条
@@ -115,7 +117,8 @@ public class SearchUniquePathsSingleThread {
                     // 先分裂让分裂出的往下走
                     SearchMachine newMachine = this.split();
                     newMachine.moveTowardN();
-                    queue.offer(newMachine);
+                    // queue.offer(newMachine);
+                    stacks.push(newMachine);
 
                     // 自己横着走一步
                     this.moveTowardM();
@@ -159,9 +162,13 @@ public class SearchUniquePathsSingleThread {
 
     void walk(int m , int n){
         SearchMachine f1 = new SearchMachine(m,n);
-        queue.offer(f1);
-        while(!queue.isEmpty()){
+        // queue.offer(f1);
+        stacks.push(f1);
+        /*while(!queue.isEmpty()){
             queue.poll().start();
+        }*/
+        while(!stacks.isEmpty()){
+            stacks.pop().start();
         }
     }
 
@@ -176,6 +183,4 @@ public class SearchUniquePathsSingleThread {
             }
         });
     }
-
-
 }

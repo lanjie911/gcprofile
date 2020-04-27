@@ -15,6 +15,19 @@ public class LambdaExpression {
         return factory;
     }
 
+    public int sum(int a, int b, IntAddSum cal) {
+        int k = 0;
+        k = cal.sum(a, b);
+        return k;
+    }
+
+    public static void main(String[] args) {
+        LambdaExpression e = new LambdaExpression();
+        int m = e.sum(3,5, IntAddSumImpl::sum);
+        System.out.println(m);
+    }
+
+
 }
 
 interface MyFunc {
@@ -23,4 +36,14 @@ interface MyFunc {
 
 interface MyPOJOFactory {
     LambdaExpression newInstance();
+}
+
+interface IntAddSum {
+    int sum(int a, int b);
+}
+
+class IntAddSumImpl {
+    public static int sum(int a, int b){
+        return a+b;
+    }
 }

@@ -17,10 +17,7 @@ public class IsSameBinaryTree {
         if (p != null && q == null) {
             return false;
         }
-        if (p.val != q.val) {
-            return false;
-        }
-        return execute(p.left, q.left) && execute(p.right, q.right);
+        return p.val == q.val && execute(p.left, q.left) && execute(p.right, q.right);
     }
 
     public static void main(String[] args) {
@@ -45,8 +42,8 @@ public class IsSameBinaryTree {
         root2.left = left2;
         root2.right = right2;
 
-        left1.left = left11;
-        left2.left = left21;
+        //left1.left = left11;
+        //left2.left = left21;
 
         boolean s = o.execute(root1, root2);
         System.out.println(s);
