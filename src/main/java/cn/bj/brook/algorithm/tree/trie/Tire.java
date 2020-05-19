@@ -103,4 +103,22 @@ public class Tire {
         }
         return true;
     }
+
+    public void delete(String word) {
+        Tire node = this;
+        for(int i = 0; i < word.length(); i++){
+            char c = word.charAt(i);
+            node = node.children[c - 'a'];
+            if(node == null){
+                return;
+            }
+            node.num--;
+            if(node.num == 0){
+                node.hasChild = false;
+                node.nodeCharacter = 0;
+                node.isWholeWord = false;
+                return;
+            }
+        }
+    }
 }

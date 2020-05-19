@@ -1,5 +1,7 @@
 package cn.bj.brook.algorithm.sort;
 
+import cn.bj.brook.algorithm.array.ArrayFormatter;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -40,10 +42,10 @@ public class SortUtil {
     }
 
     public static String toString(int[] array){
-        return Arrays.toString(array);
+        return ArrayFormatter.toString(array);
     }
 
     public static void print(int[] array){
-        System.out.println(toString(array));
+        ArrayFormatter.print(array);
     }
 }

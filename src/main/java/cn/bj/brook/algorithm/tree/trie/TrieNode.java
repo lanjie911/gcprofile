@@ -1,13 +1,16 @@
 package cn.bj.brook.algorithm.tree.trie;
 
 public class TrieNode {
-
-    protected int num;
-    protected TrieNode[] children;
+    // 当前节点保存的字母的数量
+    public int num;
+    // 子节点集合
+    public TrieNode[] children;
     // 证明到这里为止是否是一个完整到单词，这个属性很重要
-    protected boolean isWholeWord;
-    protected char nodeCharacter;
-    protected boolean hasChild;
+    public boolean isWholeWord;
+    // 节点当前的字符
+    public char nodeCharacter;
+    // 备忘录是否有过子节点
+    public boolean hasChild;
 
     public TrieNode(){
         num = 1;
@@ -16,5 +19,4 @@ public class TrieNode {
         isWholeWord = false;
         hasChild = false;
     }
-
 }

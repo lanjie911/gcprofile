@@ -44,6 +44,9 @@ public class MaxValueFromSlidingWindowInArray {
     // 如果不如新的值那么就是之前的值（在有效期内）
     // 由于最大值的有效期可能会因为窗口滑动而失效，所以要处理
     public int[] maxSlidingWindow(int[] nums, int k) {
+        if(nums.length == 0 || k == 0){
+            return new int[0];
+        }
         // 定义最终输出的数组
         // m个元素的n滑动窗口最大值是m-n+1
         int[] rs = new int[nums.length - k + 1];
