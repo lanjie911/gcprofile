@@ -1,5 +1,7 @@
 package cn.bj.brook.basegramma;
 
+import java.util.TreeMap;
+
 public class ComplementCode {
     public static void main(String[] args) {
         int i = -1;
@@ -13,5 +15,7 @@ public class ComplementCode {
         for(i=Integer.MIN_VALUE;i<0;i++){
             System.out.println(Integer.toBinaryString(i));
         }
+
+        TreeMap<String, String> map = null;
     }
 }
