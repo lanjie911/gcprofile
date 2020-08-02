@@ -5,7 +5,7 @@ import cn.bj.brook.DateTimeTool;
 import static java.lang.System.out;
 
 public class Logg {
-    public static void println(String line){
+    public static void println(Object line){
         out.println("Thread-"+Thread.currentThread().getId()+":    "+DateTimeTool.printCurrentTime()+":    "+line);
     }
 
