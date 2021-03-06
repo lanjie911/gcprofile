@@ -59,7 +59,7 @@ public class MajorityNumberInArray {
     }
 
 
-    // Boyer-Moore投票算法
+    // Boyer-Moore（博耶-穆尔）投票算法
     // 思路非常牛逼
     // 简单的说就是靠遗忘同样数量的众数和非众数
     // 剩下的就是众数

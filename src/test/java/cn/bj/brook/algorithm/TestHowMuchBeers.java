@@ -32,5 +32,11 @@ public class TestHowMuchBeers {
         Assert.assertEquals(10, max);
     }
 
+    @Test
+    public void test4(){
+        int max = beers.maxBeers(3, 2);
+        Assert.assertEquals(5, max);
+    }
+
 
 }

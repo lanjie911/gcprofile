@@ -40,24 +40,49 @@ public class FullDemo {
 
     public static void main(String[] args) {
         Score s1 = new Score();
-        s1.average = 98;
-        s1.number = 50;
+        s1.average = 1;
+        s1.number = 10;
         Score s2 = new Score();
-        s2.average = 82;
-        s2.number = 55;
+        s2.average = 2;
+        s2.number = 20;
+        Score s3 = new Score();
+        s3.average = 3;
+        s3.number = 30;
         List<Score> ls = new LinkedList<>();
         ls.add(s1);
         ls.add(s2);
-        Long total = 0l;
-        total = ls.stream().reduce( 3l, (a, b) -> {
-                    System.out.println("a1="+a);
-                    System.out.println("b1="+(b.average*b.number));
-                    return b.average*b.number+a;
-                }, (m, n)->{
-            return 0l;
+        ls.add(s3);
+
+
+        int m = ls.stream().parallel().reduce(0, (value, score) -> {
+                    System.out.println("value=" + value);
+                    System.out.println("right=" + score.average);
+                    return score.average * score.number + value;
+                }, (value1, value2) -> {
+                    System.out.printf("v1=%d,v2=%d %n", value1, value2);
+                    return value1.intValue() + value2.intValue();
                 }
         );
-        System.out.println("t=" + total);
+        System.out.println("m=" + m);
+
+
+        Map<String, Integer> mapx = ls.stream().parallel().collect(HashMap<String, Integer>::new, (map, ele) -> {
+            System.out.printf("e.average is %d%n", ele.average);
+            map.put(ele.average + "", ele.number);
+        }, (prevMap, postMap) -> {
+            // 如果不是并行流，那么本函数压根不会得到被调用的机会
+            // 只有流是并行的，才会调用本函数
+            Set<String> keySets = postMap.keySet();
+            keySets.forEach(
+                    (key) -> {
+                        Integer v = postMap.get(key);
+                        prevMap.put(key, v);
+                    }
+            );
+        });
+        mapx.keySet().forEach(key -> {
+            System.out.println("key=" + key + ",value=" + mapx.get(key));
+        });
 
     }
 
