@@ -2,6 +2,7 @@ package cn.bj.brook.algorithm.sort.reverse;
 
 import cn.bj.brook.algorithm.sort.SortAlgorithmFrame;
 import cn.bj.brook.algorithm.sort.SortFunction;
+import cn.bj.brook.algorithm.sort.SortUtil;
 
 /**
  * 按照降序排序的冒泡排序法
@@ -43,6 +44,7 @@ public class ReverseBubbleSort implements SortFunction {
                     arr[j] = next;
                     bubbled = true;
                 }
+                SortUtil.print(arr);
             }
             // 如果在一次循环中没有出现过冒泡的行为那么证明排好序了
             if (!bubbled) {
@@ -56,7 +58,7 @@ public class ReverseBubbleSort implements SortFunction {
     }
 
     public static void main(String[] args) {
-        SortAlgorithmFrame frame = new SortAlgorithmFrame(100, 8);
+        SortAlgorithmFrame frame = new SortAlgorithmFrame(100, 5);
         frame.sort(ReverseBubbleSort.newInstance());
     }
 }

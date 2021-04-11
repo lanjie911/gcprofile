@@ -22,7 +22,7 @@ public class ReverseHeapSortInSelf implements SortFunction {
         // 从offset开始计算为0
         // 使用相同的空间
         for (int i = offset; i < arr.length; i++) {
-            int j = i-offset;
+            int j = i - offset;
             while (j > 0) {
                 int parent;
                 int parentIndex;
@@ -32,10 +32,10 @@ public class ReverseHeapSortInSelf implements SortFunction {
                 } else {
                     parentIndex = (j - 1) / 2;
                 }
-                if (arr[j+offset] > arr[parentIndex+offset]) {
-                    parent = arr[parentIndex+offset];
-                    arr[parentIndex+offset] = arr[j+offset];
-                    arr[j+offset] = parent;
+                if (arr[j + offset] > arr[parentIndex + offset]) {
+                    parent = arr[parentIndex + offset];
+                    arr[parentIndex + offset] = arr[j + offset];
+                    arr[j + offset] = parent;
                     j = parentIndex;
                     continue;
                 } else {

@@ -5,9 +5,19 @@ import cn.bj.brook.algorithm.sort.SortFunction;
 
 /**
  * 选择排序的反向排序
+ *
  * @see cn.bj.brook.algorithm.sort.SelectionSort#sort(int[])
  */
 public class ReverseSelectionSort implements SortFunction {
+
+    public static SortFunction newInstance() {
+        return new ReverseSelectionSort();
+    }
+
+    public static void main(String[] args) {
+        SortAlgorithmFrame frame = new SortAlgorithmFrame(100, 2);
+        frame.sort(ReverseSelectionSort.newInstance());
+    }
 
     @Override
     public void sort(int[] arr) {
@@ -21,15 +31,15 @@ public class ReverseSelectionSort implements SortFunction {
         int cursor = 0;
 
         // 游标没有达到数组的末尾
-        while(cursor < arr.length-1){
+        while (cursor < arr.length - 1) {
             // 记录一个最大值
             int max = arr[cursor];
             // 记录当前最大值的脚标
             int j = cursor;
             // 从游标的右侧(剩余的池子)
-            for(int i = cursor;i<arr.length;i++){
+            for (int i = cursor + 1; i < arr.length; i++) {
                 // 如果找到了最大值
-                if(arr[i]>max){
+                if (arr[i] > max) {
                     max = arr[i];
                     j = i;
                 }
@@ -39,7 +49,7 @@ public class ReverseSelectionSort implements SortFunction {
             // 如果cursor的值和j的值相等
             // 就可以避免一次交换
             // 即cursor == j 就不交换
-            if(cursor != j) {
+            if (cursor != j) {
                 int temp = arr[cursor];
                 arr[cursor] = max;
                 arr[j] = temp;
@@ -47,14 +57,5 @@ public class ReverseSelectionSort implements SortFunction {
             // 游标向右拨动一格，游标左侧就是排好序的
             cursor++;
         }
-    }
-
-    public static SortFunction newInstance() {
-        return new ReverseSelectionSort();
-    }
-
-    public static void main(String[] args) {
-        SortAlgorithmFrame frame = new SortAlgorithmFrame(100,18);
-        frame.sort(ReverseSelectionSort.newInstance());
     }
 }

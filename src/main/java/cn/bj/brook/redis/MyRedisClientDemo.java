@@ -2,10 +2,7 @@ package cn.bj.brook.redis;
 
 import redis.clients.jedis.*;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MyRedisClientDemo {
 
@@ -53,6 +50,21 @@ public class MyRedisClientDemo {
         slave.close();
     }
 
+    public void testLuaScript(){
+        Jedis client = new Jedis("172.16.105.141", 6379);
+        Object resp = client.eval("return {100,200}");
+        System.out.println(resp.getClass().getCanonicalName());
+        ArrayList<Long> list = (ArrayList<Long>) resp;
+        list.forEach(System.out::println);
+
+        resp = client.eval("redis.call('SET',KEYS[1], ARGV[1])",1,"b","361");
+        if(resp != null){
+            System.out.println(resp.getClass().getCanonicalName());
+        }
+
+        client.close();
+    }
+
     public void testCluster(){
         HostAndPort a = new HostAndPort("172.16.105.141",6379);
         HostAndPort b = new HostAndPort("172.16.105.142",6379);
@@ -75,6 +87,6 @@ public class MyRedisClientDemo {
 
     public static void main(String[] args) {
         MyRedisClientDemo demo = new MyRedisClientDemo();
-        demo.testSentinel();
+        demo.testLuaScript();
     }
 }
