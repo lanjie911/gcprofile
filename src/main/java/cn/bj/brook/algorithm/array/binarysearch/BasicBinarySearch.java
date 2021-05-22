@@ -1,11 +1,36 @@
 package cn.bj.brook.algorithm.array.binarysearch;
 
-import cn.bj.brook.algorithm.sort.SortUtil;
-
 /**
  * 基本二分法查找元素
  */
 public class BasicBinarySearch {
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 3, 5, 7, 9};
+        BasicBinarySearch search = new BasicBinarySearch();
+        int t = search.search(arr, 5);
+        System.out.println("t=" + t);
+    }
+
+    public static double findAlpha(double s, double l) {
+        // 角alpha最大90度，不能到90度
+        double alpha_max_value = Math.PI / 2;
+        // 角alpha最小0度，不能到0度
+        double alpha_min_value = 0;
+        double alpha = (alpha_max_value + alpha_min_value) / 2;
+
+        double value = s / l;
+
+        while (alpha_min_value + 0.01 < alpha_max_value) {
+            if (alpha / Math.sin(alpha) < value)
+                alpha_min_value = alpha;
+            else if (alpha / Math.sin(alpha) > value)
+                alpha_max_value = alpha;
+            // 最后再求个平均值取近似
+            alpha = (alpha_min_value + alpha_max_value) / 2;
+        }
+        return alpha;
+    }
+
     /**
      * 思路是二分法
      *
@@ -40,12 +65,5 @@ public class BasicBinarySearch {
             return right_pointer;
         }
         return -1;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = new int[]{1, 3, 5, 7, 9};
-        BasicBinarySearch search = new BasicBinarySearch();
-        int t = search.search(arr, 5);
-        System.out.println("t=" + t);
     }
 }
