@@ -1,5 +1,7 @@
 package cn.bj.brook.bio;
 
+import cn.bj.brook.thread.ThreadSleep;
+
 import java.io.*;
 import java.nio.CharBuffer;
 import java.nio.charset.Charset;
@@ -36,7 +38,30 @@ public class FileAccessDemo {
         }
     }
 
+    public static void hugeRead(){
+
+        RandomAccessFile raf = null;
+        byte[] bs = new byte[1];
+        try {
+            raf = new RandomAccessFile("/Users/zhaoyongchuan/Virtual Machines.localized/Windows 10 x64.vmwarevm/虚拟磁盘-s002.vmdk","r");
+            int i = 0;
+            while(i < raf.length()){
+                try {
+                    raf.seek(i);
+                    raf.read(bs);
+                    System.out.println(bs[0]);
+                    i+=8;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            raf.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
-        randRead();
+        hugeRead();
     }
 }
