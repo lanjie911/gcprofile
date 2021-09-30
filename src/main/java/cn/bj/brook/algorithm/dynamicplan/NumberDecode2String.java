@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 一条包含字母 A-Z 的消息通过以下方式进行了编码：
+ * 一条包含字母A-Z 的消息通过以下方式进行了编码：
  * <p>
  * 'A' -> 1
  * 'B' -> 2
@@ -16,12 +16,12 @@ import java.util.List;
  * <p>
  * 输入: "12"
  * 输出: 2
- * 解释: 它可以解码为 "AB"（1 2）或者 "L"（12）。
- * 示例 2:
+ * 解释:它可以解码为 "AB"（1 2）或者 "L"（12）。
+ * 示例2:
  * <p>
  * 输入: "226"
  * 输出: 3
- * 解释: 它可以解码为 "BZ" (2 26), "VF" (22 6), 或者 "BBF" (2 2 6) 。
+ * 解释:它可以解码为 "BZ" (2 26), "VF" (22 6), 或者 "BBF" (2 2 6) 。
  * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/decode-ways

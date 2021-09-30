@@ -27,7 +27,7 @@ public class TestCoinToChange {
     @Test
     public void test3() {
         int[] arr = new int[]{27, 40, 244, 168, 383};
-        int n = func.coinChange2(arr, 6989);
+        int n = func.coin2Change(arr, 6989);
         Assert.assertEquals(23, n);
     }
 }
